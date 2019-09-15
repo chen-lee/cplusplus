@@ -1,0 +1,1 @@
+- [x] testEndianness.cpp  用于测试计算机中字节的存储顺序，是大端还是小端

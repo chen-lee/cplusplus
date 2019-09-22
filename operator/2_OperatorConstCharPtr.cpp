@@ -40,11 +40,17 @@ public:
         return tmpStr.c_str();
     }
 
+    operator int() {
+        return day;
+    }
+
 };
 
 int main(int argc, char** argv) {
     Date date(25);
-    const char* test = "12345";
-    std::cout << date << " " << test << std::endl;
+    const char* test = date;
+    std::cout << test << std::endl;
+    int day = date;
+    std::cout << day << std::endl;
     return 0;
 }

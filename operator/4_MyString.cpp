@@ -57,6 +57,7 @@ public:
             buffer = new char[strlen(input.buffer) + 1];
             strcpy(buffer, input.buffer);
         }
+        return *this;
     }
 
     // move assignment operator
@@ -86,8 +87,8 @@ public:
             strcpy(newString.buffer, buffer);
             strcat(newString.buffer, input.buffer);
         }
-
-        return newString;
+        // 这里必须加上std::move才能调用移动构造函数
+        return std::move(newString);
     }
 
     // Destructor
